@@ -1,6 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-const { title, desc } = Astro.props;
+const { title, desc, ogUrl } = Astro.props;
 ---
 
 <!doctype html>
@@ -12,7 +12,7 @@ const { title, desc } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta
       property="og:image"
-      content="https://snippets.nekoweb.org/assets/opengraph/index.png"
+      content=`https://snippets.nekoweb.org/opengraph/${ogUrl}`
     />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={desc} />
