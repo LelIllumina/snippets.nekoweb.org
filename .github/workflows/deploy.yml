@@ -1,12 +1,6 @@
-name: Deploy to GitHub Pages
+name: Deploy to NekoWeb
 
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
+on: [push]
 
 jobs:
   build:
