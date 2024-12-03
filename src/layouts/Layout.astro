@@ -1,8 +1,12 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import background from "../assets/background.svg";
+import { selfieUrl } from "astro-selfie";
 import "../styles/global.css";
-const { title, desc, ogUrl } = Astro.props;
+
+const screenshotUrl = selfieUrl(Astro);
+
+const { title, desc } = Astro.props;
 ---
 
 <!doctype html>
@@ -12,10 +16,7 @@ const { title, desc, ogUrl } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <meta
-      property="og:image"
-      content=`https://snippets.nekoweb.org/opengraph/${ogUrl}`
-    />
+    <meta property="og:image" content={screenshotUrl.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={desc} />
     <meta property="og:type" content="website" />
