@@ -15,7 +15,7 @@ Using the Nekoweb API, this script grabs data about your website, which include 
 
 This script assumes you have four HTML elements with the ids of created, updated, visitors, and followers. For example:
 
-```HTML
+```html
 <div>
   <h2>Stats:</h2>
   <p id="created"><em>Created</em>: Loading..</p>
@@ -24,7 +24,6 @@ This script assumes you have four HTML elements with the ids of created, updated
   <p id="followers"><em>Followers</em>: Loading..</p>
   <!-- All the "Loading..."s will get overwritten by the script -->
 </div>
-
 ```
 
 After [importing](/FAQ/importing/), In the script just replace `yourusernamehere` with your Nekoweb username.

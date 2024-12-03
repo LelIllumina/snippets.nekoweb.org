@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const FAQ = await getCollection("FAQ");
+
+  return FAQ.map((entry) => ({
+    params: { FAQ: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}
+  ><div id="content">
+    <h1>{entry.data.title}</h1>
+    <article><Content /></article>
+  </div>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 22px;
+    margin-top: 0.25em;
+    margin: 10px;
+  }
+
+  h2 {
+    margin: 0 0 1em;
+    font-weight: normal;
+    font-size: 20px;
+  }
+
+  main {
+    display: block;
+    padding: 100px;
+  }
+</style>

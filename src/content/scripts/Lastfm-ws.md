@@ -67,17 +67,19 @@ After [importing](/FAQ/importing/), replace `yourusernamehere` with your last.fm
 
 Just add this HTML somewhere on your page
 
-```HTML
-    <div id="songBox">
-        <img
-            id="trackCover"
-            src="https://lel.nekoweb.org/assets/images/NekoFM/loading.png"
-            alt=""
-        /> <!-- ! -->
-        <div id="trackInfo">
-            <h2 id="trackName">Loading...</h2>
-            <p id="artistName">Loading...</p>
-    </div>
+```html
+<div id="songBox">
+  <img
+    id="trackCover"
+    src="https://lel.nekoweb.org/assets/images/NekoFM/loading.png"
+    alt=""
+  />
+  <!-- ! -->
+  <div id="trackInfo">
+    <h2 id="trackName">Loading...</h2>
+    <p id="artistName">Loading...</p>
+  </div>
+</div>
 ```
 
 > [!TIP] Change images
