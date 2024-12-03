@@ -13,22 +13,24 @@ const authors = await getCollection("authors");
     <img id="background" src={background.src} alt="" fetchpriority="high" />
     <main>
       <h1>Snippet Categories</h1>
-      {
-        scripts.map((entry) => {
-          const authorData = authors.find(
-            (author) => author.id === entry.data.author.id,
-          );
-          const { title } = entry.data;
-          return (
-            <div class="snippet">
-              <a href={entry.slug}>
-                {title} by{" "}
-                {authorData ? authorData.data.name : "Unknown Author"}
-              </a>
-            </div>
-          );
-        })
-      }
+      <section id="links">
+        {
+          scripts.map((entry) => {
+            const authorData = authors.find(
+              (author) => author.id === entry.data.author.id,
+            );
+            const { title } = entry.data;
+            return (
+              <div class="snippet">
+                <a href={entry.slug}>
+                  {title} by{" "}
+                  {authorData ? authorData.data.name : "Unknown Author"}
+                </a>
+              </div>
+            );
+          })
+        }
+      </section>
     </main>
   </div>
 </Layout>
