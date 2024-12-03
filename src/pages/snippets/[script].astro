@@ -6,7 +6,7 @@ export async function getStaticPaths() {
   const scripts = await getCollection("scripts");
 
   return scripts.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { script: entry.slug },
     props: { entry },
   }));
 }
@@ -15,10 +15,12 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout>
-  <h1>{entry.data.title}</h1>
-  <h2>By {entry.data.author}</h2>
-  <article><Content /></article>
+<Layout title={entry.data.title}
+  ><div id="content">
+    <h1>{entry.data.title}</h1>
+    <h2>By {entry.data.author}</h2>
+    <article><Content /></article>
+  </div>
 </Layout>
 
 <style>
@@ -32,5 +34,10 @@ const { Content } = await entry.render();
     margin: 0 0 1em;
     font-weight: normal;
     font-size: 20px;
+  }
+
+  main {
+    display: block;
+    padding: 100px;
   }
 </style>
