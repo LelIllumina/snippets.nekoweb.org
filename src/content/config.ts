@@ -19,7 +19,16 @@ const authors = defineCollection({
   }),
 });
 
+const FAQ = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    updated: z.date(),
+  }),
+});
+
 export const collections = {
   scripts,
   authors,
+  FAQ,
 };
