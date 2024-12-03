@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import "../../styles/post.css";
 
 export async function getStaticPaths() {
   const scripts = await getCollection("scripts");
@@ -16,7 +17,7 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}
-  ><div id="content">
+  ><div id="content" class="prose lg:prose-xl">
     <h1>{entry.data.title}</h1>
     <h2>By {entry.data.author}</h2>
     <article><Content /></article>
@@ -39,5 +40,9 @@ const { Content } = await entry.render();
   main {
     display: block;
     padding: 100px;
+  }
+
+  #content {
+    margin: 50px;
   }
 </style>
