@@ -49,12 +49,27 @@ main {
   justify-content: center;
 }
 
+/* h2 {
+    margin: 0 0 1em;
+    font-weight: normal;
+    color: #111827;
+    font-size: 20px;
+  }*/
+
+p {
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.006em;
+  margin: 0;
+}
+
 @font-face {
   font-display: swap;
   font-family: "Lexend";
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/lexend-v23-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/lexend-v23-latin-regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -62,7 +77,7 @@ main {
   font-family: "Lexend";
   font-style: normal;
   font-weight: 700;
-  src: url("/fonts/lexend-v23-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/lexend-v23-latin-700.woff2") format("woff2");
 }
 
 @font-face {
