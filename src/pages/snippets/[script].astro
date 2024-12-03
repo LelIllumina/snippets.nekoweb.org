@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const scripts = await getCollection("scripts");
+
+  return scripts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout>
+  <h1>{entry.data.title}</h1>
+  <h2>By {entry.data.author}</h2>
+  <article><Content /></article>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 22px;
+    margin-top: 0.25em;
+    margin: 10px;
+  }
+
+  h2 {
+    margin: 0 0 1em;
+    font-weight: normal;
+    font-size: 20px;
+  }
+</style>

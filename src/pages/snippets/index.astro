@@ -1,17 +1,49 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import background from "../../assets/background.svg";
+
+import { getCollection } from "astro:content";
+
+const scripts = await getCollection("scripts");
+const authors = await getCollection("authors");
 ---
 
-<Layout title="Index">
+<Layout title="Index" desc="Index of Snippets">
   <div id="container">
     <img id="background" src={background.src} alt="" fetchpriority="high" />
     <main>
       <h1>Snippet Categories</h1>
+      {
+        scripts.map((entry) => {
+          const authorData = authors.find(
+            (author) => author.id === entry.data.author.id,
+          );
+          const { title } = entry.data;
+          return (
+            <div class="snippet">
+              <a href={entry.slug}>
+                {title} by{" "}
+                {authorData ? authorData.data.name : "Unknown Author"}
+              </a>
+            </div>
+          );
+        })
+      }
     </main>
   </div>
 </Layout>
+
 <style>
+  @media (prefers-color-scheme: dark) {
+    .snippet {
+      background-color: #1e1e1e;
+    }
+  }
+  @media (prefers-color-scheme: light) {
+    .snippet {
+      background-color: #e1e1e1;
+    }
+  }
   #background {
     position: fixed;
     top: 0;
@@ -31,14 +63,25 @@ import background from "../../assets/background.svg";
 
   main {
     height: 100%;
-    display: flex;
-    justify-content: center;
     padding: 50px;
   }
 
   h1 {
     font-size: 22px;
     margin-top: 0.25em;
+    margin: 10px;
+  }
+
+  #snippets-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .snippet {
+    border-radius: 10px;
+    width: 400px;
+    padding: 20px;
+    margin: 10px;
   }
 
   #links {
@@ -91,7 +134,6 @@ import background from "../../assets/background.svg";
   h2 {
     margin: 0 0 1em;
     font-weight: normal;
-    color: #111827;
     font-size: 20px;
   }
 
