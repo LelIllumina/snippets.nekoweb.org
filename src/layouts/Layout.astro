@@ -10,7 +10,7 @@ const { title, desc } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="m-0 h-full w-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -30,10 +30,16 @@ const { title, desc } = Astro.props;
     <meta name="description" content={desc} />
     <ViewTransitions />
   </head>
-  <body>
-    <div id="container">
-      <img id="background" src={background.src} alt="" fetchpriority="high" />
-      <main>
+  <body class="dark:bg-bg m-0 h-full w-full bg-white">
+    <div id="container" class="h-full font-sans">
+      <img
+        id="background"
+        class="fixed left-0 top-0 -z-10 h-full w-full blur-3xl"
+        src={background.src}
+        alt=""
+        fetchpriority="high"
+      />
+      <main class="flex h-full justify-center">
         <slot />
       </main>
     </div>
