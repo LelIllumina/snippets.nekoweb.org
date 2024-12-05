@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import background from "../../assets/background.svg";
 
 import { getCollection } from "astro:content";
 
@@ -10,7 +9,6 @@ const authors = await getCollection("authors");
 
 <Layout title="Index" desc="Index of Snippets">
   <div id="container">
-    <img id="background" src={background.src} alt="" fetchpriority="high" />
     <main>
       <h1>Snippets</h1>
       <section id="links">
