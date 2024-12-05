@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 import background from "../assets/background.svg";
 import { selfieUrl } from "astro-selfie";
 import "../styles/global.css";
@@ -28,7 +27,6 @@ const { title, desc } = Astro.props;
 
     <title>{title}</title>
     <meta name="description" content={desc} />
-    <ViewTransitions />
   </head>
   <body class="dark:bg-bg m-0 h-full w-full bg-white">
     <div id="container" class="h-full font-sans">
