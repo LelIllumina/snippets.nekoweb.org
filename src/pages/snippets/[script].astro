@@ -20,7 +20,7 @@ const { Content } = await entry.render();
 <Layout title={entry.data.title}
   ><div
     id="content"
-    class="prose lg:prose-xl prose-slate dark:prose-invert h-full min-w-[70%]"
+    class="prose prose-slate m-10 h-fit min-w-[70%] lg:prose-xl dark:prose-invert"
   >
     <h1>{entry.data.title}</h1>
     <h2>By {entry.data.author}</h2>
@@ -29,12 +29,6 @@ const { Content } = await entry.render();
 </Layout>
 
 <style>
-  h1 {
-    font-size: 22px;
-    margin-top: 0.25em;
-    margin: 10px;
-  }
-
   h2 {
     margin: 0 0 1em;
     font-weight: normal;
@@ -44,9 +38,5 @@ const { Content } = await entry.render();
   main {
     display: block;
     padding: 100px;
-  }
-
-  #content {
-    margin: 50px;
   }
 </style>
