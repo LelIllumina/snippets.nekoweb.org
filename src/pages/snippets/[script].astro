@@ -23,20 +23,7 @@ const { Content } = await entry.render();
     class="prose prose-slate m-10 h-fit min-w-[70%] lg:prose-xl dark:prose-invert"
   >
     <h1>{entry.data.title}</h1>
-    <h2>By {entry.data.author}</h2>
+    <a class="text-slate-600 no-underline">By {entry.data.author}</a>
     <article><Content /></article>
   </div>
 </Main>
-
-<style>
-  h2 {
-    margin: 0 0 1em;
-    font-weight: normal;
-    font-size: 20px;
-  }
-
-  main {
-    display: block;
-    padding: 100px;
-  }
-</style>
