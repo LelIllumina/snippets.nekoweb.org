@@ -6,14 +6,27 @@ import "remark-github-blockquote-alert/alert.css";
 
 export async function getStaticPaths() {
   const scripts = await getCollection("scripts");
+  const authors = await getCollection("authors"); // Fetch the authors collection
 
-  return scripts.map((entry) => ({
-    params: { script: entry.slug },
-    props: { entry },
-  }));
+  const paths = scripts.map((entry) => {
+    const authorReference = entry.data.author;
+    const authorData = authors.find(
+      (author) => author.id === authorReference.id,
+    );
+
+    return {
+      params: { script: entry.slug },
+      props: {
+        entry,
+        author: authorData || null, // Pass the resolved author or null if not found
+      },
+    };
+  });
+
+  return paths;
 }
 
-const { entry } = Astro.props;
+const { entry, author } = Astro.props;
 const { Content } = await entry.render();
 ---
 
@@ -23,7 +36,30 @@ const { Content } = await entry.render();
     class="prose prose-slate m-10 h-fit min-w-[70%] lg:prose-xl dark:prose-invert"
   >
     <h1>{entry.data.title}</h1>
-    <a class="text-slate-600 no-underline">By {entry.data.author}</a>
+    <div class="pb-4 [&>*]:inline [&>*]:px-2">
+      <a class="text-slate-500 no-underline" href=`/author/${author?.data.name}`
+        >By {author?.data.name}</a
+      >
+      <p>|</p>
+      {entry.data.categories.map((str) => <p>{str}</p>)}
+      {
+        entry.data.edited && (
+          <>
+            <p>|</p>
+            <p>
+              Edited from source
+              <span
+                title="This script was edited enough to be marked as edited"
+                class="m-0 cursor-help p-0 opacity-50"
+              >
+                🛈
+              </span>
+            </p>
+          </>
+        )
+      }
+      <a class="float-right no-underline" href={author?.data.site}>Source</a>
+    </div>
     <article><Content /></article>
   </div>
 </Main>
