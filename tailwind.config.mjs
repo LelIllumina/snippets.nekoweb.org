@@ -24,6 +24,16 @@ export default {
         "serif",
       ],
       mono: ["Jetbrains Mono", "ui-monospace", "SFMono-Regular"],
+      "sans-alt": [
+        "Lemon Milk",
+        "Arial",
+        "Nimbus Sans",
+        "Arial Nova",
+        "Helvetica Sans",
+        "Roboto",
+        "Inter",
+        "sans-serif",
+      ],
     },
 
     extend: {

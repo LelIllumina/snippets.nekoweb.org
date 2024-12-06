@@ -18,35 +18,3 @@ body::selection {
   color: white;
   background-color: #179299;
 }
-
-@font-face {
-  font-display: swap;
-  font-family: "Lexend";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/lexend-v23-latin-regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Lexend";
-  font-style: normal;
-  font-weight: 700;
-  src: url("/fonts/lexend-v23-latin-700.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Jetbrains Mono";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/jetbrains-mono-v20-latin-regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Instrument Serif";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/instrument-serif-v4-latin-regular.woff2") format("woff2");
-}
