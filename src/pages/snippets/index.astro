@@ -8,125 +8,37 @@ const authors = await getCollection("authors");
 ---
 
 <Layout title="Index" desc="Index of Snippets">
-  <div id="container">
-    <main>
-      <h1>Snippets</h1>
-      <section id="links">
-        {
-          scripts.map((entry) => {
-            const authorData = authors.find(
-              (author) => author.id === entry.data.author.id,
-            );
-            const { title } = entry.data;
-            return (
-              <div class="snippet">
-                <img src=`/og/snippets/${entry.slug}/.png` alt={title} loading="eager" decoding="async"><br>
-                <a href={entry.slug}>{title}</a>
-                <p>
-                  by
-                  {authorData ? authorData.data.name : "Unknown Author"}
-                </p>
-              </div>
-            );
-          })
-        }
-      </section>
-    </main>
+  <div id="container" class="h-full font-sans">
+    <h1 class="m-10 my-2 text-2xl">Snippets</h1>
+    <section class="flex gap-10">
+      {
+        scripts.map((entry) => {
+          const authorData = authors.find(
+            (author) => author.id === entry.data.author.id,
+          );
+          const { title } = entry.data;
+          return (
+            <div class="bg-box-light dark:bg-box-dark m-1 h-fit w-96 rounded-xl p-8">
+              <img
+                src={`/og/snippets/${entry.slug}/.png`}
+                alt={title}
+                loading="eager"
+                decoding="async"
+              />
+              <br />
+              <a href={entry.slug}>{title}</a>
+              <p class="text-neutral-500">
+                by {authorData ? authorData.data.name : "Unknown Author"}
+              </p>
+            </div>
+          );
+        })
+      }
+    </section>
   </div>
 </Layout>
 
 <style>
-  @media (prefers-color-scheme: dark) {
-    .snippet {
-      background-color: #1e1e1e;
-    }
-  }
-  @media (prefers-color-scheme: light) {
-    .snippet {
-      background-color: #e1e1e1;
-    }
-  }
-
-  #container {
-    font-family: "Lexend", "Inter", "Roboto", "Helvetica Neue", "Arial Nova",
-      "Nimbus Sans", Arial, sans-serif;
-    height: 100%;
-  }
-
-  main {
-    height: 100%;
-    padding: 50px;
-    flex-direction: column;
-  }
-
-  h1 {
-    font-size: 22px;
-    margin-top: 0.25em;
-    margin: 10px;
-  }
-
-  #snippets-list {
-    display: flex;
-    justify-content: center;
-  }
-
-  .snippet {
-    border-radius: 10px;
-    height: 300px;
-    width: 400px;
-    margin: 10px;
-    padding: 20px 22px;
-  }
-
-  #links {
-    display: flex;
-    gap: 16px;
-  }
-
-  #links a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  #links a:hover {
-    color: rgb(78, 80, 86);
-  }
-
-  #links a svg {
-    height: 1em;
-    margin-left: 8px;
-  }
-
-  #links a.button {
-    color: white;
-    background: linear-gradient(83.21deg, #40a02b 0%, #179299 100%);
-    box-shadow:
-      inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-      inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-    border-radius: 10px;
-  }
-
-  #links a.button:hover {
-    color: rgb(230, 230, 230);
-    box-shadow: none;
-  }
-
-  h2 {
-    margin: 0 0 1em;
-    font-weight: normal;
-    font-size: 20px;
-  }
-
-  p {
-    color: #4b5563;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.006em;
-    margin: 0;
-  }
-
   code {
     display: inline-block;
     background:
@@ -140,29 +52,5 @@ const authors = await getCollection("authors");
   body::selection {
     color: white;
     background-color: #179299;
-  }
-
-  @media screen and (max-width: 768px) {
-    #container {
-      display: flex;
-      flex-direction: column;
-    }
-
-    #hero {
-      display: block;
-      padding-top: 10%;
-    }
-
-    #links {
-      flex-wrap: wrap;
-    }
-
-    #links a.button {
-      padding: 14px 18px;
-    }
-
-    h1 {
-      line-height: 1.5;
-    }
   }
 </style>

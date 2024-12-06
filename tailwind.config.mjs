@@ -25,10 +25,14 @@ export default {
       ],
       mono: ["Jetbrains Mono", "ui-monospace", "SFMono-Regular"],
     },
-    colors: {
-      bg: "#1c1b22",
+
+    extend: {
+      colors: {
+        bg: "#1c1b22",
+        "box-dark": "#1e1e1e",
+        "box-light": "#e1e1e1",
+      },
     },
-    extend: {},
   },
   plugins: [typography],
 };
