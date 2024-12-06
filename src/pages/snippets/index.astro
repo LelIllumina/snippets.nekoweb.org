@@ -19,12 +19,14 @@ const authors = await getCollection("authors");
           const { title } = entry.data;
           return (
             <div class="m-1 h-fit w-96 rounded-xl bg-box-light p-8 dark:bg-box-dark">
-              <img
-                src={`/og/snippets/${entry.slug}/.png`}
-                alt={title}
-                loading="eager"
-                decoding="async"
-              />
+              <a href={entry.slug}>
+                <img
+                  src={`/og/snippets/${entry.slug}/.png`}
+                  alt={title}
+                  loading="eager"
+                  decoding="async"
+                />
+              </a>
               <br />
               <a href={entry.slug}>{title}</a>
               <p class="text-neutral-500">
