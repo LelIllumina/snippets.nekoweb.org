@@ -1,0 +1,8 @@
+---
+import Layout from "./Layout.astro";
+import Header from "../components/Header.astro";
+const props = Astro.props;
+---
+
+<Header />
+<Layout {...props}><slot /></Layout>

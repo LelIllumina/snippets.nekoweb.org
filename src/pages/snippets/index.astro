@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Main from "../../layouts/Main.astro";
 
 import { getCollection } from "astro:content";
 
@@ -7,7 +7,7 @@ const scripts = await getCollection("scripts");
 const authors = await getCollection("authors");
 ---
 
-<Layout title="Index" desc="Index of Snippets">
+<Main title="Index" desc="Index of Snippets">
   <div id="container" class="h-full font-sans">
     <h1 class="m-10 my-2 text-2xl">Snippets</h1>
     <section class="flex gap-10">
@@ -18,7 +18,7 @@ const authors = await getCollection("authors");
           );
           const { title } = entry.data;
           return (
-            <div class="bg-box-light dark:bg-box-dark m-1 h-fit w-96 rounded-xl p-8">
+            <div class="m-1 h-fit w-96 rounded-xl bg-box-light p-8 dark:bg-box-dark">
               <img
                 src={`/og/snippets/${entry.slug}/.png`}
                 alt={title}
@@ -36,7 +36,7 @@ const authors = await getCollection("authors");
       }
     </section>
   </div>
-</Layout>
+</Main>
 
 <style>
   code {

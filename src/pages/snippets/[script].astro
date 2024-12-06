@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
+import Main from "../../layouts/Main.astro";
 import "../../styles/post.css";
 import "remark-github-blockquote-alert/alert.css";
 
@@ -17,7 +17,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={entry.data.title}
+<Main title={entry.data.title}
   ><div
     id="content"
     class="prose prose-slate m-10 h-fit min-w-[70%] lg:prose-xl dark:prose-invert"
@@ -26,7 +26,7 @@ const { Content } = await entry.render();
     <h2>By {entry.data.author}</h2>
     <article><Content /></article>
   </div>
-</Layout>
+</Main>
 
 <style>
   h2 {

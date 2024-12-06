@@ -1,0 +1,22 @@
+---
+// Header.astro
+const links = [
+  { href: "/snippets/", text: "Snippets" },
+  { href: "/FAQ/", text: "FAQ" },
+];
+---
+
+<header class="px-10 py-6 text-white">
+  <div class="container mx-auto flex items-center justify-between px-4">
+    <a href="/" class="font-serif text-2xl"> Snippets.nekoweb.org </a>
+    <nav class="flex space-x-6">
+      {
+        links.map((link) => (
+          <a href={link.href} class="transition hover:text-gray-300">
+            {link.text}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
