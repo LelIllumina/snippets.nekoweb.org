@@ -1,21 +1,21 @@
 ---
 title: "Lastfm Widget with REST API"
 author: "max"
-categories: ["lastfm"]
+categories: ["lastfm", "widget"]
 edited: false
 scriptSource: https://maxpixels.moe/resources/lastfm-widget/
 ---
 
 Using Last.fm's API, this widget tracks what song you are currently listening to and displays it on your site.
 
-> [!NOTE] Credits
-> Original code by [laura](https://laura.nekoweb.org/) with her permission.
+> [!NOTE] Credits:
+> Original code by [Laura](https://laura.nekoweb.org/) with her permission.
 >
-> Original Original script by [Bianca Rosa](https://github.com/biancarosa/lastfm-last-played)
+> Original, Original script by [Bianca Rosa](https://github.com/biancarosa/lastfm-last-played)
 
 **Important:**
 
-This script assumes you have a HTML element with an id of listening.
+This script assumes you have an HTML element with an id of listening.
 
 All you have to do after [importing](/FAQ/importing/) is to replace `yourusernamehere` with your last.fm username.
 

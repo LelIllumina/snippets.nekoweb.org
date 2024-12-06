@@ -1,7 +1,7 @@
 ---
 title: "Nekoweb Stats Widget"
 author: "max"
-categories: ["Nekoweb"]
+categories: ["Nekoweb", "widget"]
 edited: false
 scriptSource: https://maxpixels.moe/resources/nekoweb-stats/
 ---

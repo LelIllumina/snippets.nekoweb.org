@@ -1,12 +1,12 @@
 ---
 title: "Lastfm Widget with Websockets"
 author: "lel"
-categories: ["lastfm"]
+categories: ["lastfm", "widget"]
 edited: false
 scriptSource: https://lel.nekoweb.org/nekofm/
 ---
 
-> [!NOTE] Credit
+> [!NOTE] Credit:
 > Websocket server is hosted by [Tepiloxtl](https://tepiloxtl.net/scrobbled/).
 
 After [importing](/FAQ/importing/), replace `yourusernamehere` with your last.fm username.
@@ -82,7 +82,7 @@ Just add this HTML somewhere on your page
 </div>
 ```
 
-> [!TIP] Change images
-> You can change the images used in the code to your liking. Just replace the URLs (that ive marked with comments that look like `//!`) with your own images.
+> [!TIP] Change images:
+> You can change the images used in the code to your liking. Just replace the URLs (that I've marked with comments that look like `//!`) with your own images.
 >
-> By default they link to my website, which uses the ones used on NekoFM
+> By default, they link to my website, which uses the ones used on NekoFM
