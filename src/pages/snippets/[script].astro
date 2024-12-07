@@ -35,7 +35,7 @@ const { Content } = await entry.render();
     id="content"
     class="prose prose-slate m-10 h-fit min-w-[70%] lg:prose-xl dark:prose-invert"
   >
-    <h1>{entry.data.title}</h1>
+    <h1 class="font-sans-alt">{entry.data.title}</h1>
     <div class="pb-4 [&>*]:inline [&>*]:px-2">
       <a class="text-slate-500 no-underline" href=`/author/${author?.data.name}`
         >By {author?.data.name}</a
