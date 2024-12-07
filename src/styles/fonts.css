@@ -1,7 +1,7 @@
 /* Lexend - Sans */
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: "Lexend";
   font-style: normal;
   font-weight: 400;
@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: "Lexend";
   font-style: normal;
   font-weight: 700;
@@ -19,7 +19,7 @@
 /* Jetbrains Mono - Mono */
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: "Jetbrains Mono";
   font-style: normal;
   font-weight: 400;
@@ -29,7 +29,7 @@
 /* Instrument Serif - Serif */
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: "Instrument Serif";
   font-style: normal;
   font-weight: 400;
@@ -39,7 +39,7 @@
 /* Lemon Milk - Sans */
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: "Lemon Milk";
   font-style: normal;
   font-weight: 400;
@@ -47,7 +47,7 @@
 }
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: "Lemon Milk";
   font-style: italic;
   font-weight: 400;
@@ -55,7 +55,7 @@
 }
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: "Lemon Milk";
   font-style: normal;
   font-weight: 700;
@@ -63,7 +63,7 @@
 }
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: "Lemon Milk";
   font-style: italic;
   font-weight: 700;
@@ -71,7 +71,7 @@
 }
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: "Lemon Milk";
   font-style: normal;
   font-weight: 300;
@@ -79,7 +79,7 @@
 }
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: "Lemon Milk";
   font-style: italic;
   font-weight: 300;
@@ -87,7 +87,7 @@
 }
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: "Lemon Milk";
   font-style: normal;
   font-weight: 500;
@@ -95,7 +95,7 @@
 }
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: "Lemon Milk";
   font-style: italic;
   font-weight: 500;
