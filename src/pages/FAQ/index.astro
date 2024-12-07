@@ -1,30 +1,21 @@
 ---
-import Main from "@layouts/Main.astro";
-import More from "@components/More.astro";
+import PostList from "@layouts/PostList.astro";
 
 import { getCollection } from "astro:content";
 
 const FAQ = await getCollection("FAQ");
 ---
 
-<Main title="Index" desc="Index of FAQs">
-  <div id="container" class="h-full font-sans">
-    <h1 class="m-10 my-2 text-3xl">FAQ</h1>
-    <section class="flex gap-10">
-      <div id="FAQs-list">
-        {
-          FAQ.map((entry) => {
-            const { title, description } = entry.data;
-            return (
-              <div class="m-1 h-fit w-96 rounded-xl bg-box-light p-8 dark:bg-box-dark">
-                <a href={entry.slug}>{title}</a>
-                <p class="text-sm text-slate-500">{description}</p>
-              </div>
-            );
-          })
-        }
-      </div>
-    </section>
-    <More />
-  </div>
-</Main>
+<PostList title="Index" desc="Index of FAQs" heading="FAQs">
+  {
+    FAQ.map((entry) => {
+      const { title, description } = entry.data;
+      return (
+        <div class="m-1 h-fit w-96 rounded-xl bg-box-light p-8 dark:bg-box-dark">
+          <a href={entry.slug}>{title}</a>
+          <p class="text-sm text-slate-500">{description}</p>
+        </div>
+      );
+    })
+  }
+</PostList>

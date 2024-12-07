@@ -1,6 +1,5 @@
 ---
-import Main from "@layouts/Main.astro";
-import More from "@components/More.astro";
+import PostList from "@layouts/PostList.astro";
 
 import { getCollection } from "astro:content";
 
@@ -8,38 +7,32 @@ const scripts = await getCollection("scripts");
 const authors = await getCollection("authors");
 ---
 
-<Main title="Index" desc="Index of Snippets">
-  <div id="container" class="h-full font-sans">
-    <h1 class="m-10 my-2 text-2xl">Snippets</h1>
-    <section class="flex gap-10">
-      {
-        scripts.map((entry) => {
-          const authorData = authors.find(
-            (author) => author.id === entry.data.author.id,
-          );
-          const { title, description } = entry.data;
-          return (
-            <div class="m-1 h-fit w-96 rounded-xl bg-box-light p-8 dark:bg-box-dark">
-              <a href={entry.slug}>
-                <img
-                  src={`/og/snippets/${entry.slug}/.png`}
-                  alt={title}
-                  loading="eager"
-                  decoding="async"
-                />
-              </a>
-              <br />
-              <a href={entry.slug}>{title}</a>
-              <p class="text-slate-600">
-                by {authorData ? authorData.data.name : "Unknown Author"}
-              </p>
-              <hr class="my-2 border-slate-500" />
-              <p class="text-sm text-slate-500">{description}</p>
-            </div>
-          );
-        })
-      }
-    </section>
-    <More />
-  </div>
-</Main>
+<PostList title="Index" desc="Index of Snippets" heading="Snippets">
+  {
+    scripts.map((entry) => {
+      const authorData = authors.find(
+        (author) => author.id === entry.data.author.id,
+      );
+      const { title, description } = entry.data;
+      return (
+        <div class="m-1 h-fit w-96 rounded-xl bg-box-light p-8 dark:bg-box-dark">
+          <a href={entry.slug}>
+            <img
+              src={`/og/snippets/${entry.slug}/.png`}
+              alt={title}
+              loading="eager"
+              decoding="async"
+            />
+          </a>
+          <br />
+          <a href={entry.slug}>{title}</a>
+          <p class="text-slate-600">
+            by {authorData ? authorData.data.name : "Unknown Author"}
+          </p>
+          <hr class="my-2 border-slate-500" />
+          <p class="text-sm text-slate-500">{description}</p>
+        </div>
+      );
+    })
+  }
+</PostList>

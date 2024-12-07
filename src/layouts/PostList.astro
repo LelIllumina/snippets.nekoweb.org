@@ -1,0 +1,22 @@
+---
+import More from "@components/More.astro";
+import Main from "./Main.astro";
+
+interface Props {
+  title: string;
+  desc: string;
+  heading: string;
+}
+
+const { title, desc, heading } = Astro.props;
+---
+
+<Main title={title} desc={desc}>
+  <div id="container" class="h-full font-sans">
+    <h1 class="m-10 my-2 text-2xl">{heading}</h1>
+    <section class="flex gap-10">
+      <slot />
+    </section>
+    <More />
+  </div>
+</Main>
