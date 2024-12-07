@@ -30,11 +30,11 @@ const authors = await getCollection("authors");
               </a>
               <br />
               <a href={entry.slug}>{title}</a>
-              <p class="text-neutral-600">
+              <p class="text-slate-600">
                 by {authorData ? authorData.data.name : "Unknown Author"}
               </p>
-              <hr class="my-2 border-neutral-500" />
-              <p class="text-sm text-neutral-500">{description}</p>
+              <hr class="my-2 border-slate-500" />
+              <p class="text-sm text-slate-500">{description}</p>
             </div>
           );
         })
