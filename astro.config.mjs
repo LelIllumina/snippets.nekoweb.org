@@ -14,6 +14,7 @@ export default defineConfig({
     ...(process.env.GITHUB_ACTIONS ? [] : [selfie()]), // Include selfie() only if not in GitHub Actions
   ],
   site: "https://snippets.nekoweb.org",
+  build: { format: "preserve" },
   markdown: {
     remarkPlugins: [remarkAlert],
 
