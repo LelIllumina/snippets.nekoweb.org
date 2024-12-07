@@ -1,5 +1,6 @@
 ---
 import Main from "@layouts/Main.astro";
+import More from "@components/More.astro";
 
 import { getCollection } from "astro:content";
 
@@ -39,8 +40,6 @@ const authors = await getCollection("authors");
         })
       }
     </section>
-    <h2 class="m-20 text-center font-sans-alt text-3xl">
-      And more to be added
-    </h2>
+    <More />
   </div>
 </Main>

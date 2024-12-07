@@ -1,0 +1,17 @@
+---
+import Main from "@layouts/Main.astro";
+interface Props {
+  title: string;
+  desc: string;
+}
+const props = Astro.props;
+---
+
+<Main {...props}
+  ><div
+    id="content"
+    class="prose prose-slate m-10 h-fit min-w-[70%] lg:prose-xl dark:prose-invert"
+  >
+    <slot />
+  </div>
+</Main>
