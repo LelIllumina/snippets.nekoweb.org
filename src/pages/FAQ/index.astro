@@ -13,10 +13,11 @@ const FAQ = await getCollection("FAQ");
       <div id="FAQs-list">
         {
           FAQ.map((entry) => {
-            const { title } = entry.data;
+            const { title, description } = entry.data;
             return (
               <div class="m-1 h-fit w-96 rounded-xl bg-box-light p-8 dark:bg-box-dark">
-                <a href={entry.slug}>{title} </a>
+                <a href={entry.slug}>{title}</a>
+                <p class="text-sm text-neutral-500">{description}</p>
               </div>
             );
           })

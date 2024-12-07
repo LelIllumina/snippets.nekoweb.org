@@ -1,7 +1,8 @@
 ---
-title: "Lastfm Widget with Websockets"
-author: "lel"
-categories: ["lastfm", "widget"]
+title: Lastfm Widget with Websockets
+author: lel
+description: 'Last.fm "now listening" widget using Tepiloxtl''s Websocket.'
+categories: [lastfm, widget]
 edited: false
 scriptSource: https://lel.nekoweb.org/nekofm/
 ---

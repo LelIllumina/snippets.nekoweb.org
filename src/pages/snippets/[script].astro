@@ -33,7 +33,7 @@ const { entry, author } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Main title={entry.data.title}
+<Main title={entry.data.title} desc={entry.data.description}
   ><div
     id="content"
     class="prose prose-slate m-10 h-fit min-w-[70%] lg:prose-xl dark:prose-invert"
