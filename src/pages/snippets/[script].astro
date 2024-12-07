@@ -1,4 +1,5 @@
 ---
+import type { InferGetStaticPropsType } from "astro";
 import { getCollection } from "astro:content";
 import Main from "@layouts/Main.astro";
 import "@styles/post.css";
@@ -25,6 +26,8 @@ export async function getStaticPaths() {
 
   return paths;
 }
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { entry, author } = Astro.props;
 const { Content } = await entry.render();
