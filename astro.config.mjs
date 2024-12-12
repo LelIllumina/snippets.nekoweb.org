@@ -7,6 +7,7 @@ import selfie from "astro-selfie";
 
 // https://astro.build/config
 export default defineConfig({
+  prefetch: true,
   integrations: [
     tailwind(),
     sitemap(),
