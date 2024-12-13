@@ -4,7 +4,7 @@ author: max
 description: "A simple script to display Nekoweb stats."
 categories: [Nekoweb, widget]
 edited: false
-scriptSource: https://maxpixels.moe/resources/nekoweb-stats/
+source: https://maxpixels.moe/resources/nekoweb-stats/
 ---
 
 Using the Nekoweb API, this script grabs data about your website, which include your site's:

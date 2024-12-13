@@ -4,7 +4,7 @@ author: lel
 description: 'Last.fm "now listening" widget using Tepiloxtl''s Websocket.'
 categories: [lastfm, widget]
 edited: false
-scriptSource: https://lel.nekoweb.org/nekofm/
+source: https://lel.nekoweb.org/nekofm/
 ---
 
 > [!NOTE] Credit:

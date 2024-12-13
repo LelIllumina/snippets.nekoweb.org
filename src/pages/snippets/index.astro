@@ -16,16 +16,16 @@ const authors = await getCollection("authors");
       const { title, description } = entry.data;
       return (
         <div class="m-1 h-fit w-96 rounded-xl bg-box-light p-8 dark:bg-box-dark">
-          <a href={entry.slug}>
+          <a href={entry.id}>
             <img
-              src={`/og/scripts/${entry.slug}.png`}
+              src={`/og/scripts/${entry.id}.png`}
               alt={title}
               loading="eager"
               decoding="async"
             />
           </a>
           <br />
-          <a href={entry.slug}>{title}</a>
+          <a href={entry.id}>{title}</a>
           <p class="text-slate-600">
             by {authorData ? authorData.data.name : "Unknown Author"}
           </p>

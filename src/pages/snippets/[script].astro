@@ -1,5 +1,4 @@
 ---
-import type { InferGetStaticPropsType } from "astro";
 import { getCollection, render } from "astro:content";
 import Rendered from "@layouts/Rendered.astro";
 import "@styles/post.css";
@@ -16,7 +15,7 @@ export async function getStaticPaths() {
     );
 
     return {
-      params: { script: entry.slug },
+      params: { script: entry.id },
       props: {
         entry,
         author: authorData || null, // Pass the resolved author or null if not found
@@ -27,8 +26,6 @@ export async function getStaticPaths() {
   return paths;
 }
 
-type Props = InferGetStaticPropsType<typeof getStaticPaths>;
-
 const { entry, author } = Astro.props;
 const { Content } = await render(entry);
 ---
@@ -36,7 +33,7 @@ const { Content } = await render(entry);
 <Rendered
   title={entry.data.title}
   desc={entry.data.description}
-  og=`/og/scripts/${entry.slug}.png`
+  og=`/og/scripts/${entry.id}.png`
 >
   <h1 class="font-sans-alt">{entry.data.title}</h1>
   <div class="pb-4 [&>*]:inline [&>*]:px-2">

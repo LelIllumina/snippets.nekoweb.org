@@ -1,5 +1,4 @@
 ---
-import type { InferGetStaticPropsType } from "astro";
 import { getCollection, render } from "astro:content";
 import Rendered from "@layouts/Rendered.astro";
 import "@styles/post.css";
@@ -9,12 +8,10 @@ export async function getStaticPaths() {
   const FAQ = await getCollection("FAQ");
 
   return FAQ.map((entry) => ({
-    params: { FAQ: entry.slug },
+    params: { FAQ: entry.id },
     props: { entry },
   }));
 }
-
-type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
@@ -23,7 +20,7 @@ const { Content } = await render(entry);
 <Rendered
   title={entry.data.title}
   desc={entry.data.description}
-  og=`/og/FAQ/${entry.slug}.png`
+  og=`/og/FAQ/${entry.id}.png`
   ><h1 class="font-sans-alt">
     {entry.data.title}
   </h1><div class="pb-4 [&>*]:inline [&>*]:px-2">

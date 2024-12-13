@@ -1,3 +1,2 @@
-$schema: .astro/collections/authors.schema.json
 name: maxpixels
 site: https://www.maxpixels.moe/

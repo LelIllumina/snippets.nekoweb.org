@@ -12,15 +12,15 @@ const FAQ = await getCollection("FAQ");
       const { title, description } = entry.data;
       return (
         <div class="m-1 h-fit w-96 rounded-xl bg-box-light p-8 dark:bg-box-dark">
-          <a href={entry.slug}>
+          <a href={entry.id}>
             <img
-              src={`/og/FAQ/${entry.slug}.png`}
+              src={`/og/FAQ/${entry.id}.png`}
               alt={title}
               loading="eager"
               decoding="async"
             />
           </a>
-          <a href={entry.slug}>{title}</a>
+          <a href={entry.id}>{title}</a>
           <p class="text-sm text-slate-500">{description}</p>
         </div>
       );

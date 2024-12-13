@@ -4,7 +4,7 @@ author: max
 description: 'Last.fm "now listening" widget using Bianca Rosa''s REST API.'
 categories: [lastfm, widget]
 edited: false
-scriptSource: https://maxpixels.moe/resources/lastfm-widget/
+source: https://maxpixels.moe/resources/lastfm-widget/
 ---
 
 Using Last.fm's API, this widget tracks what song you are currently listening to and displays it on your site.
