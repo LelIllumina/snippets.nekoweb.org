@@ -8,7 +8,7 @@ const pages = Object.fromEntries(
     await Promise.all(
       collectionNames.map(async (collection) => {
         const entries = await getCollection(collection);
-        return entries.map(({ slug, data }) => [`${collection}/${slug}`, data]);
+        return entries.map(({ id, data }) => [`${collection}/${id}`, data]);
       }),
     )
   ).flat(),
