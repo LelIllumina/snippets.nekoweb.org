@@ -1,6 +1,6 @@
 ---
 import type { InferGetStaticPropsType } from "astro";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Rendered from "@layouts/Rendered.astro";
 import "@styles/post.css";
 import "remark-github-blockquote-alert/alert.css";
@@ -30,7 +30,7 @@ export async function getStaticPaths() {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { entry, author } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <Rendered
