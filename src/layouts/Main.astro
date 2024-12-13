@@ -1,8 +1,22 @@
 ---
 import Layout from "./Layout.astro";
 import Header from "@components/Header.astro";
+import background from "@assets/background.svg";
 const props = Astro.props;
 ---
 
-<Header />
-<Layout {...props}><slot /></Layout>
+<Layout {...props}>
+  <Header />
+  <div id="container" class="h-full font-sans">
+    <img
+      id="background"
+      class="fixed left-0 top-0 -z-10 h-full w-full blur-3xl"
+      src={background.src}
+      alt=""
+      fetchpriority="high"
+    />
+    <main class="flex h-full justify-center p-20">
+      <slot />
+    </main>
+  </div>
+</Layout>

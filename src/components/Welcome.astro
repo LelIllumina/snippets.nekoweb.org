@@ -1,18 +1,27 @@
 ---
-
+import background from "@assets/background.svg";
 ---
 
+<div id="container" class="h-full font-sans">
+  <img
+    id="background"
+    class="fixed left-0 top-0 -z-10 h-full w-full blur-3xl"
+    src={background.src}
+    alt=""
+    fetchpriority="high"
+  />
+  <main class="flex h-full justify-center p-20">
 <section id="hero">
   <h1 id="title" class="leading-tight">
     Nekoweb Snippets<br />from all over
     <a href="https://nekoweb.org/">nekoweb.org</a>
   </h1>
-  <h2>
+      <h2 class="mt-1 text-2xl">
     View user-submitted and aggregated snippets related to <code
       ><pre>Nekoweb</pre></code
     >
   </h2>
-  <section id="links">
+      <section id="links" class="my-4 flex w-full gap-4">
     <a class="button" href="/snippets/">View Snippets</a>
     <a class="button" href="/FAQ/">View FAQS</a>
     <a href="https://lel.nekoweb.org/"
@@ -30,6 +39,8 @@
     </a>
   </section>
 </section>
+  </main>
+</div>
 
 <style>
   /* Nekoweb Text */
@@ -127,16 +138,6 @@
     font-size: 80px;
     font-family: "Instrument Serif", "Times New Roman", "Times", serif;
     font-weight: 100;
-  }
-
-  h2 {
-    font-size: 22px;
-    margin-top: 0.25em;
-  }
-
-  #links {
-    display: flex;
-    gap: 16px;
   }
 
   #links a {
