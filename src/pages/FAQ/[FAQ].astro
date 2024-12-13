@@ -20,7 +20,10 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Rendered title={entry.data.title} desc={entry.data.description}
+<Rendered
+  title={entry.data.title}
+  desc={entry.data.description}
+  og=`/og/FAQ/${entry.slug}.png`
   ><h1 class="font-sans-alt">
     {entry.data.title}
   </h1><div class="pb-4 [&>*]:inline [&>*]:px-2">

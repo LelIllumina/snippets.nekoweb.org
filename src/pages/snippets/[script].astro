@@ -33,7 +33,11 @@ const { entry, author } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Rendered title={entry.data.title} desc={entry.data.description}>
+<Rendered
+  title={entry.data.title}
+  desc={entry.data.description}
+  og=`/og/scripts/${entry.slug}.png`
+>
   <h1 class="font-sans-alt">{entry.data.title}</h1>
   <div class="pb-4 [&>*]:inline [&>*]:px-2">
     <a class="text-slate-500 no-underline" href=`/author/${author?.data.name}`
@@ -57,7 +61,7 @@ const { Content } = await entry.render();
         </>
       )
     }
-    <a class="float-right no-underline" href={author?.data.site}>Source</a>
+    <a class="float-right" href={author?.data.site}>Source</a>
   </div>
   <article><Content /></article>
 </Rendered>

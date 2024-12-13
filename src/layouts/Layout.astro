@@ -1,12 +1,9 @@
 ---
 import { ClientRouter, fade } from "astro:transitions";
-import { selfieUrl } from "astro-selfie";
 import "@styles/global.css";
 import "@styles/fonts.css";
 
-const screenshotUrl = selfieUrl(Astro);
-
-const { title, desc } = Astro.props;
+const { title, desc, og } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,7 +13,7 @@ const { title, desc } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <meta property="og:image" content={screenshotUrl.href} />
+    <meta property="og:image" content={og} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={desc} />
     <meta property="og:type" content="website" />
