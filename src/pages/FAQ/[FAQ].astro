@@ -6,14 +6,27 @@ import "remark-github-blockquote-alert/alert.css";
 
 export async function getStaticPaths() {
   const FAQ = await getCollection("FAQ");
+  const authors = await getCollection("authors"); // Fetch the authors collection
 
-  return FAQ.map((entry) => ({
-    params: { FAQ: entry.id },
-    props: { entry },
-  }));
+  const paths = FAQ.map((entry) => {
+    const authorReference = entry.data.author;
+    const authorData = authors.find(
+      (author) => author.id === authorReference.id,
+    );
+
+    return {
+      params: { FAQ: entry.id },
+      props: {
+        entry,
+        author: authorData || null, // Pass the resolved author or null if not found
+      },
+    };
+  });
+
+  return paths;
 }
 
-const { entry } = Astro.props;
+const { entry, author } = Astro.props;
 const { Content } = await render(entry);
 ---
 
@@ -24,9 +37,20 @@ const { Content } = await render(entry);
   ><h1 class="font-sans-alt">
     {entry.data.title}
   </h1><div class="pb-4 [&>*]:inline [&>*]:px-2">
-    <p class="text-slate-500 no-underline">
+    <a class="text-slate-500 no-underline" href=`/author/${author?.data.name}`
+      >By {author?.data.name}</a
+    >
+    <p>|</p>
+    <p>
       Last Updated: {entry.data.updated.toLocaleDateString()}
     </p>
+    {
+      entry.data.source && (
+        <a class="float-right" href={entry.data.source}>
+          Source
+        </a>
+      )
+    }
   </div>
   <article><Content /></article>
 </Rendered>

@@ -1,5 +1,6 @@
 ---
 title: "Joosh's Domain Tutorial"
+author: joosh
 description: "The Nekoweb official instructions can be confusing, and I see a lot of people in the Discord asking about this."
 updated: 2024-10-13
 source: https://domain.joo.sh/

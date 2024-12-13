@@ -1,5 +1,6 @@
 ---
 title: "Importing Javascript code"
+author: lel
 description: "Info on how to import Javascript snippets."
 updated: 2024-03-12
 ---

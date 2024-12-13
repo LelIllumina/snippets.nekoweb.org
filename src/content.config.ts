@@ -25,6 +25,7 @@ const FAQ = defineCollection({
   loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/FAQ/" }),
   schema: z.object({
     title: z.string(),
+    author: reference("authors"),
     description: z.string(),
     updated: z.date(),
     source: z.string().url().optional(),
